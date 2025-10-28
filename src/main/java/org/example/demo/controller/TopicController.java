@@ -27,8 +27,8 @@ public class TopicController {
   }
 
   @PostMapping("/topics")
-  public void addTopic(){
-
+  public void addTopic(@RequestBody Topic topic){
+      topicService.addTopic(topic);
   }
 
 }
