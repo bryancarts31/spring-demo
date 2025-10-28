@@ -3,6 +3,7 @@ package org.example.demo.controller;
 import org.example.demo.model.Topic;
 import org.example.demo.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,10 @@ public class TopicController {
   @RequestMapping("/topics")
   public List<Topic> getAllTopics(){
       return topicService.getAllTopics();
+  }
+
+  @RequestMapping("/topics/{id}")
+  public Topic getTopic(@PathVariable int id){
+      return topicService.getTopic(id);
   }
 }
