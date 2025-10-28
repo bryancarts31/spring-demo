@@ -1,6 +1,11 @@
 package org.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Topic {
+    @Id
     private int topicID;
     private String topicName;
     private String topicDescription;
